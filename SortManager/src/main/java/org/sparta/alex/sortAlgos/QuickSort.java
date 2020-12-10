@@ -19,7 +19,7 @@ public class QuickSort implements Sorter{
     }
 
     public static int[] partition(int [] array){
-        if(array.length <=1){
+        if(array.length <= 1){
             return array;
         }
         int pivot = array[array.length-1];
@@ -31,7 +31,7 @@ public class QuickSort implements Sorter{
                 left++;
             }
 
-            while (array[right] >= pivot) {
+            while (array[right] >= pivot && right >= 1) {
                 right--;
             }
 
@@ -43,8 +43,28 @@ public class QuickSort implements Sorter{
             array[right] = hold;
         }
 
-        int[] leftPartition = Arrays.copyOfRange(array,0,left);
-        int[] rightPartition = Arrays.copyOfRange(array,left,array.length-1);
+        int[] leftPartition;
+        int[] rightPartition;
+
+        if(left == right){
+            //only occurs if array size of 2: pivot is assigned to array[1] and left and right == 0.
+            //runs check as (left < right) is never checked, if array[0] > pivot => right
+            //as both are 0, original
+
+            if(array[left] >= pivot){
+                leftPartition =Arrays.copyOfRange(array,0,left);
+                rightPartition = Arrays.copyOfRange(array,0,array.length-1);
+            } else{
+                leftPartition =Arrays.copyOfRange(array,0,array.length-1);
+                rightPartition =Arrays.copyOfRange(array,0,left);
+
+            }
+
+        }else {
+
+            leftPartition = Arrays.copyOfRange(array, 0, left);
+            rightPartition = Arrays.copyOfRange(array, left, array.length - 1);
+        }
 
         System.out.println(Arrays.toString(array));
         System.out.println(Arrays.toString(leftPartition));
@@ -65,7 +85,11 @@ public class QuickSort implements Sorter{
 
     public static void main(String[] args) {
         QuickSort qs = new QuickSort();
-        System.out.println(Arrays.toString(qs.sortArray(new int[]{2,5,6,3,2,5,9,8,3})));
+        //System.out.println(Arrays.toString(qs.sortArray(new int[]{2,5,6,3,2,5,9,8,3})));
+
+        System.out.println(Arrays.toString(qs.sortArray(new int[]{3,1,7,2,8,44,1,53})));
+
+        //System.out.println(Arrays.toString(qs.sortArray(new int[] {7,5})));
 
 
     }

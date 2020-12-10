@@ -2,10 +2,8 @@ package org.sparta.alex;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.sparta.alex.sortAlgos.BinaryTreeSort;
-import org.sparta.alex.sortAlgos.BubbleSort;
-import org.sparta.alex.sortAlgos.InsertionSort;
-import org.sparta.alex.sortAlgos.MergeSort;
+import org.sparta.alex.sortAlgos.*;
+
 import java.util.Arrays;
 
 public class AlgosTest {
@@ -43,6 +41,11 @@ public class AlgosTest {
         Assertions.assertEquals(Arrays.toString(sortedArray),Arrays.toString(insertionSort.sortArray(unsorted)));
     }
 
+    @Test
+    public void quickSortTest(){
+        QuickSort quickSort = new QuickSort();
+        Assertions.assertEquals(Arrays.toString(sortedArray), Arrays.toString(quickSort.sortArray(unsorted)));
+    }
 
 
 
