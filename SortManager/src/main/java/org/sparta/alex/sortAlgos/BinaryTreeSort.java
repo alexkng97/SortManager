@@ -16,7 +16,6 @@ public class BinaryTreeSort implements Sorter {
 
     public int[] sortArray(int[] arrayToSort) {
         initBinaryTree(arrayToSort);
-
         return binaryTree.getSortedTreeAsc();
     }
 

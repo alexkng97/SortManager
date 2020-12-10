@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 public class BubbleSort implements Sorter{
 
-
     @Override
     public int[] sortArray(int[] arrayToSort) {
         //1. implement one iteration of swapping postions
