@@ -47,6 +47,11 @@ public class AlgosTest {
         Assertions.assertEquals(Arrays.toString(sortedArray), Arrays.toString(quickSort.sortArray(unsorted)));
     }
 
+    @Test
+    public void selectionSortTest(){
+        SelectionSort selectionSort = new SelectionSort();
+        Assertions.assertEquals(Arrays.toString(sortedArray),Arrays.toString(selectionSort.sortArray(unsorted)));
+    }
 
 
 
