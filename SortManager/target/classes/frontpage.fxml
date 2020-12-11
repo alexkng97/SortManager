@@ -75,7 +75,7 @@
             <VBox prefHeight="100.0" prefWidth="232.0">
                <children>
                   <Pane prefHeight="200.0" prefWidth="200.0" />
-                  <Button id="sortButton" fx:id="sortButton"  onAction="#handleSortButtonClicked" mnemonicParsing="false" prefHeight="27.0" prefWidth="262.0" text="Sort!" />
+                  <Button id="sortButton" fx:id="sortButton" mnemonicParsing="false" prefHeight="27.0" prefWidth="262.0" text="Sort!" onAction="#handleSortButtonClicked"/>
                </children>
             </VBox>
          </children>
