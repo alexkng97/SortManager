@@ -1,4 +1,4 @@
-package org.sparta.alex.presentation;
+package org.sparta.alex.starter;
 
 
 import org.sparta.alex.sortAlgos.*;
@@ -7,7 +7,7 @@ import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class CommandLineInput {
+public class CommandLineStarter {
 
     private static void printSelectionMessage() {
         System.out.println("Please enter number of the sorting algorithm you wish to choose: \n ");
@@ -20,6 +20,7 @@ public class CommandLineInput {
     }
 
     private static int[] callAlgorithm(int algoSelection, int[] randomArray) {
+        
 
         switch(algoSelection){
             case 1:
@@ -79,6 +80,8 @@ public class CommandLineInput {
         long startTime = System.nanoTime();
         int[] sortedArray = callAlgorithm(algoSelection, unsortedArray);
         long endTime = System.nanoTime();
+
+
         System.out.println(Arrays.toString(sortedArray));
 
         double difference = (endTime - startTime)/1000000.0;
