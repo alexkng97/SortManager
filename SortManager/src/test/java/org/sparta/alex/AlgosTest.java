@@ -2,6 +2,7 @@ package org.sparta.alex;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.sparta.alex.presentation.RandomArray;
 import org.sparta.alex.sortAlgos.*;
 
 import java.util.Arrays;
@@ -53,6 +54,12 @@ public class AlgosTest {
         Assertions.assertEquals(Arrays.toString(sortedArray),Arrays.toString(selectionSort.sortArray(unsorted)));
     }
 
+    public void binarySortWithRandom(){
+        BinaryTreeSort bs = new BinaryTreeSort();
+        int [] randomArray = RandomArray.generateRandomArray(10);
+        
+        Assertions.assertEquals()
+    }
 
 
 }

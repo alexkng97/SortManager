@@ -3,6 +3,7 @@ package org.sparta.alex.presentation;
 
 import org.sparta.alex.sortAlgos.*;
 
+import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -62,12 +63,37 @@ public class CommandLineInput {
         }
         System.out.println("Enter the size of the array: ");
         int size = scanner.nextInt();
+        while(size < 1) {
+            System.out.println("Please enter a valid array size");
+            size = scanner.nextInt();
+        }
+        System.out.println("---------------------------------------------");
         System.out.println("Random Array generated:");
         int [] unsortedArray = RandomArray.generateRandomArray(size);
+        int [] unsortedComparision = unsortedArray;
+
         System.out.println(Arrays.toString(unsortedArray));
         System.out.println("");
+
+
+        long startTime = System.nanoTime();
         int[] sortedArray = callAlgorithm(algoSelection, unsortedArray);
+        long endTime = System.nanoTime();
         System.out.println(Arrays.toString(sortedArray));
+        double difference = (endTime - startTime)/1000000.0;
+
+        DecimalFormat df = new DecimalFormat("#.##");
+
+        System.out.println("\nThat took: " + df.format(difference) + " milliseconds!");
+
+        long startTimeComparision = System.nanoTime();
+        Arrays.sort(unsortedComparision);
+        long endTimeComparision = System.nanoTime();
+        double differenceComparision = (endTimeComparision - startTimeComparision)/1000000.0;
+
+        double finalComparision =  difference - differenceComparision;
+
+        System.out.println("Java's own sort method was "+ df.format(finalComparision) + " milliseconds faster!");
 
     }
 

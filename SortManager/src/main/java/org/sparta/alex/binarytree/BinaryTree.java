@@ -36,11 +36,11 @@ public class BinaryTree implements BinaryTreeInterface{
 
 
     private void addNodeToTree(Node node, int element) {
-        if(element == node.getValue()){
-            //haven't implemented duplicate values, wont be added to tree => size--;
-            size--;
-            return;
-        }
+//        if(element == node.getValue()){
+//            //haven't implemented duplicate values, wont be added to tree => size--;
+//            size--;
+//            return;
+//        }
 
         if(element < node.getValue()){
             if(node.isLeftChildEmpty()){
@@ -48,7 +48,7 @@ public class BinaryTree implements BinaryTreeInterface{
             }else{
                 addNodeToTree(node.getLeftChild(),element);
             }
-        } else if(element > node.getValue()){
+        } else if(element >= node.getValue()){
             if(node.isRightChildEmpty()){
                 node.setRightChild(new Node(element));
             } else{
