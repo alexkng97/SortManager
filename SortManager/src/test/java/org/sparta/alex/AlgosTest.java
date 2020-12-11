@@ -54,12 +54,58 @@ public class AlgosTest {
         Assertions.assertEquals(Arrays.toString(sortedArray),Arrays.toString(selectionSort.sortArray(unsorted)));
     }
 
+    @Test
     public void binarySortWithRandom(){
         BinaryTreeSort bs = new BinaryTreeSort();
-        int [] randomArray = RandomArray.generateRandomArray(10);
-        
-        Assertions.assertEquals()
+        int [] randomArray = RandomArray.generateRandomArray(100);
+        int [] copy = randomArray;
+        Arrays.sort(copy);
+        Assertions.assertEquals(Arrays.toString(copy), Arrays.toString(bs.sortArray(randomArray)));
     }
 
+    @Test
+    public void bubbleSortWithRandom() {
+        BubbleSort bs = new BubbleSort();
+        int[] randomArray = RandomArray.generateRandomArray(100);
+        int[] copy = randomArray;
+        Arrays.sort(copy);
+        Assertions.assertEquals(Arrays.toString(copy), Arrays.toString(bs.sortArray(randomArray)));
+    }
+
+    @Test
+    public void insertionSortWithRandom() {
+        InsertionSort is = new InsertionSort();
+        int[] randomArray = RandomArray.generateRandomArray(100);
+        int[] copy = randomArray;
+        Arrays.sort(copy);
+        Assertions.assertEquals(Arrays.toString(copy), Arrays.toString(is.sortArray(randomArray)));
+    }
+
+    @Test
+    public void mergeSortWithRandom() {
+        MergeSort ms = new MergeSort();
+        int[] randomArray = RandomArray.generateRandomArray(100);
+        int[] copy = randomArray;
+        Arrays.sort(copy);
+        Assertions.assertEquals(Arrays.toString(copy), Arrays.toString(ms.sortArray(randomArray)));
+    }
+
+    @Test
+    public void quickSortWithRandom() {
+        QuickSort qs = new QuickSort();
+        int[] randomArray = RandomArray.generateRandomArray(100);
+        int[] copy = randomArray;
+        Arrays.sort(copy);
+        Assertions.assertEquals(Arrays.toString(copy), Arrays.toString(qs.sortArray(randomArray)));
+    }
+
+    @Test
+    public void selectionSortWithRandom() {
+        SelectionSort ss = new SelectionSort();
+        int[] randomArray = RandomArray.generateRandomArray(100);
+        int[] copy = randomArray;
+        Arrays.sort(copy);
+        Assertions.assertEquals(Arrays.toString(copy), Arrays.toString(ss.sortArray(randomArray)));
+    }
 
 }

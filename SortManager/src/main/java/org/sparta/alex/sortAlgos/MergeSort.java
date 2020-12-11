@@ -1,7 +1,5 @@
 package org.sparta.alex.sortAlgos;
 
-import java.util.Arrays;
-
 public class MergeSort implements Sorter {
 
     public static int[] mergeArrays(int[] left, int[] right){
@@ -47,11 +45,9 @@ public class MergeSort implements Sorter {
         int[] right = new int[arrayToSort.length - midpoint];
 
         System.arraycopy(arrayToSort, 0 ,left,0, midpoint);
-        //System.out.println(Arrays.toString(Arrays.stream(left).toArray()));
         left = sortArray(left);
 
         System.arraycopy(arrayToSort,midpoint, right,0,arrayToSort.length - midpoint);
-        //System.out.println(Arrays.toString(Arrays.stream(right).toArray()));
         right = sortArray(right);
 
         return mergeArrays(left,right);

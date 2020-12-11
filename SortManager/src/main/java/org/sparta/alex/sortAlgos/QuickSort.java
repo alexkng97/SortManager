@@ -1,9 +1,7 @@
 package org.sparta.alex.sortAlgos;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Random;
-import java.util.stream.Stream;
+
 
 public class QuickSort implements Sorter{
 
@@ -25,7 +23,6 @@ public class QuickSort implements Sorter{
         int pivot = array[array.length-1];
         int left = 0 , right = array.length -2;
 
-       // System.out.println("PIVOT: " + pivot);
         while(left < right) {
             while (array[left] < pivot) {
                 left++;
@@ -65,10 +62,6 @@ public class QuickSort implements Sorter{
             leftPartition = Arrays.copyOfRange(array, 0, left);
             rightPartition = Arrays.copyOfRange(array, left, array.length - 1);
         }
-//
-//        System.out.println(Arrays.toString(array));
-//        System.out.println(Arrays.toString(leftPartition));
-//        System.out.println(Arrays.toString(rightPartition));
 
         leftPartition= partition(leftPartition);
         rightPartition = partition(rightPartition);
@@ -79,7 +72,6 @@ public class QuickSort implements Sorter{
         both[pivotPos] = pivot;
         System.arraycopy(rightPartition,0,both,pivotPos + 1,rightPartition.length);
 
-       // System.out.println("BOTH:" + Arrays.toString(both) );
         return both;
     }
 

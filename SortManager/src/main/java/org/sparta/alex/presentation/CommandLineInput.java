@@ -80,11 +80,12 @@ public class CommandLineInput {
         int[] sortedArray = callAlgorithm(algoSelection, unsortedArray);
         long endTime = System.nanoTime();
         System.out.println(Arrays.toString(sortedArray));
+
         double difference = (endTime - startTime)/1000000.0;
 
         DecimalFormat df = new DecimalFormat("#.##");
 
-        System.out.println("\nThat took: " + df.format(difference) + " milliseconds!");
+        System.out.println("\nThat took " + df.format(difference) + " milliseconds to sort!");
 
         long startTimeComparision = System.nanoTime();
         Arrays.sort(unsortedComparision);
