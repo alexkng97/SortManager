@@ -20,37 +20,99 @@ public class CommandLineStarter {
     }
 
     private static int[] callAlgorithm(int algoSelection, int[] randomArray) {
-        
+        long startTime, endTime;
+        double difference;
+        int[] originalArray = randomArray;
 
         switch(algoSelection){
             case 1:
                 BinaryTreeSort binaryTreeSort = new BinaryTreeSort();
                 System.out.println("Using Binary Tree Sort...");
-                return binaryTreeSort.sortArray(randomArray);
+                startTime = System.nanoTime();
+                randomArray =  binaryTreeSort.sortArray(randomArray);
+                endTime = System.nanoTime();
+                difference = (endTime - startTime)/1000000.0;
+                printSortedAndTimings(randomArray,difference,originalArray);
+                break;
+
             case 2:
                 BubbleSort bubbleSort = new BubbleSort();
                 System.out.println("Using Bubble Sort...");
-                return bubbleSort.sortArray(randomArray);
+                startTime = System.nanoTime();
+                randomArray = bubbleSort.sortArray(randomArray);
+                endTime = System.nanoTime();
+                difference = (endTime - startTime)/1000000.0;
+                printSortedAndTimings(randomArray,difference,originalArray);
+                break;
+
             case 3:
                 InsertionSort insertionSort = new InsertionSort();
                 System.out.println("Using Insertion Sort...");
-                return insertionSort.sortArray(randomArray);
+                startTime = System.nanoTime();
+                randomArray = insertionSort.sortArray(randomArray);
+                endTime = System.nanoTime();
+                difference = (endTime - startTime)/1000000.0;
+                printSortedAndTimings(randomArray,difference,originalArray);
+                break;
+
             case 4:
                 MergeSort mergeSort = new MergeSort();
                 System.out.println("Using Merge Sort...");
-                return mergeSort.sortArray(randomArray);
+                startTime = System.nanoTime();
+                randomArray = mergeSort.sortArray(randomArray);
+                endTime = System.nanoTime();
+                difference = (endTime - startTime)/1000000.0;
+                printSortedAndTimings(randomArray,difference,originalArray);
+                break;
+
             case 5:
                 QuickSort quickSort = new QuickSort();
                 System.out.println("Using Quick Sort...");
-                return quickSort.sortArray(randomArray);
+                startTime = System.nanoTime();
+                randomArray= quickSort.sortArray(randomArray);
+                endTime = System.nanoTime();
+                difference = (endTime - startTime)/1000000.0;
+                printSortedAndTimings(randomArray,difference,originalArray);
+                break;
+
             case 6:
                 SelectionSort selectionSort = new SelectionSort();
                 System.out.println("Using Selection Sort...");
-                return selectionSort.sortArray(randomArray);
+                startTime = System.nanoTime();
+                randomArray = selectionSort.sortArray(randomArray);
+                endTime = System.nanoTime();
+                difference = (endTime - startTime)/1000000.0;
+                printSortedAndTimings(randomArray,difference,originalArray);
+                break;
         }
         return new int[0];
 
+    }
 
+    public static void printSortedAndTimings(int [] sorted, double timing, int[] unsorted){
+        System.out.println(Arrays.toString(sorted));
+        DecimalFormat df = new DecimalFormat("#.###");
+
+        System.out.println("\nThat took " + df.format(timing) + " milliseconds to sort!");
+
+        long startTimeComparision = System.nanoTime();
+        Arrays.sort(unsorted);
+        long endTimeComparision = System.nanoTime();
+        double differenceComparision = (endTimeComparision - startTimeComparision)/1000000.0;
+
+        double finalComparision =  timing - differenceComparision;
+        StringBuilder sb = new StringBuilder();
+        String fasterOrSlower = "faster";
+
+        if(finalComparision < 0){
+            finalComparision *= -1;
+            fasterOrSlower = "slower";
+        }
+
+        sb.append("Java's own sort method was ").append(df.format(finalComparision)).append(" milliseconds ")
+                .append(fasterOrSlower).append("!");
+
+        System.out.println(sb.toString());
     }
 
     public static void main(String[] args) {
@@ -62,42 +124,22 @@ public class CommandLineStarter {
             System.out.println("Please enter a value from 1-6");
             algoSelection = scanner.nextInt();
         }
+
         System.out.println("Enter the size of the array: ");
         int size = scanner.nextInt();
         while(size < 1) {
             System.out.println("Please enter a valid array size");
             size = scanner.nextInt();
         }
+
         System.out.println("---------------------------------------------");
         System.out.println("Random Array generated:");
-        int [] unsortedArray = RandomArray.generateRandomArray(size);
-        int [] unsortedComparision = unsortedArray;
 
+        int [] unsortedArray = RandomArray.generateRandomArray(size);
         System.out.println(Arrays.toString(unsortedArray));
         System.out.println("");
 
-
-        long startTime = System.nanoTime();
-        int[] sortedArray = callAlgorithm(algoSelection, unsortedArray);
-        long endTime = System.nanoTime();
-
-
-        System.out.println(Arrays.toString(sortedArray));
-
-        double difference = (endTime - startTime)/1000000.0;
-
-        DecimalFormat df = new DecimalFormat("#.##");
-
-        System.out.println("\nThat took " + df.format(difference) + " milliseconds to sort!");
-
-        long startTimeComparision = System.nanoTime();
-        Arrays.sort(unsortedComparision);
-        long endTimeComparision = System.nanoTime();
-        double differenceComparision = (endTimeComparision - startTimeComparision)/1000000.0;
-
-        double finalComparision =  difference - differenceComparision;
-
-        System.out.println("Java's own sort method was "+ df.format(finalComparision) + " milliseconds faster!");
+        callAlgorithm(algoSelection,unsortedArray);
 
     }
 
