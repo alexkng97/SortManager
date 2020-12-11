@@ -1,4 +1,4 @@
-package org.sparta.alex.presentation;
+package org.sparta.alex.starter;
 
 public class RandomArray {
 

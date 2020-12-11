@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.sparta.alex.gui.Controller">
+   <children>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Pane prefHeight="100.0" prefWidth="176.0" />
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Pane prefHeight="200.0" prefWidth="200.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sort Manager" textAlignment="CENTER" wrappingWidth="231.708984375">
+                     <font>
+                        <Font name="Courier" size="29.0" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox prefHeight="140.0" prefWidth="600.0">
+         <children>
+            <Pane prefHeight="100.0" prefWidth="161.0" />
+            <VBox prefHeight="100.0" prefWidth="253.0">
+               <children>
+                  <Pane prefHeight="183.0" prefWidth="253.0" />
+                  <HBox prefHeight="35.0" prefWidth="253.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Choose Sorting Algorithm:    " />
+                        <Pane prefHeight="52.0" prefWidth="8.0" />
+                        <ChoiceBox id="sortAlgo" fx:id="algo" prefHeight="27.0" prefWidth="125.0" value="Binary Tree">
+                        <items>
+                           <FXCollections fx:factory="observableArrayList">
+                              <String fx:value="Binary Tree"/>
+                              <String fx:value="Bubble"/>
+                              <String fx:value="Insertion"/>
+                              <String fx:value="MergeSort"/>
+                              <String fx:value="QuickSort"/>
+                              <String fx:value="Selection"/>
+                           </FXCollections>
+                        </items>
+                        </ChoiceBox>
+
+
+                     </children>
+                  </HBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Pane prefHeight="30.0" prefWidth="253.0" />
+                        <HBox prefHeight="48.0" prefWidth="253.0">
+                           <children>
+                              <Pane prefHeight="42.0" prefWidth="62.0" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Array Size: " wrappingWidth="67.7978515625" />
+                              <TextField id="arraySize" fx:id="arraySize" prefHeight="27.0" prefWidth="59.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Pane prefHeight="100.0" prefWidth="175.0" />
+            <VBox prefHeight="100.0" prefWidth="232.0">
+               <children>
+                  <Pane prefHeight="200.0" prefWidth="200.0" />
+                  <Button id="sortButton" fx:id="sortButton"  onAction="#handleSortButtonClicked" mnemonicParsing="false" prefHeight="27.0" prefWidth="262.0" text="Sort!" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>

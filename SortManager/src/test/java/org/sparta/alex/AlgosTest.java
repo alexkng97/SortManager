@@ -2,7 +2,7 @@ package org.sparta.alex;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.sparta.alex.presentation.RandomArray;
+import org.sparta.alex.starter.RandomArray;
 import org.sparta.alex.sortAlgos.*;
 
 import java.util.Arrays;
