@@ -115,7 +115,7 @@ public class CommandLineStarter {
         System.out.println(sb.toString());
     }
 
-    public static void main(String[] args) {
+    public static void start(){
         printSelectionMessage();
         Scanner scanner = new Scanner(System.in);
 

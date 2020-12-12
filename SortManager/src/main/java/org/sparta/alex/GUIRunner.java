@@ -1,4 +1,4 @@
-package org.sparta.alex.gui;
+package org.sparta.alex;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -6,7 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class Main extends Application {
+public class GUIRunner extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{

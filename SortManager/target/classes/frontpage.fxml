@@ -43,8 +43,8 @@
                               <String fx:value="Binary Tree"/>
                               <String fx:value="Bubble"/>
                               <String fx:value="Insertion"/>
-                              <String fx:value="MergeSort"/>
-                              <String fx:value="QuickSort"/>
+                              <String fx:value="Merge"/>
+                              <String fx:value="Quick"/>
                               <String fx:value="Selection"/>
                            </FXCollections>
                         </items>
