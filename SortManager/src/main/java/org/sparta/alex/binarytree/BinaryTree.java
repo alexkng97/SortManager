@@ -1,5 +1,7 @@
 package org.sparta.alex.binarytree;
 
+import org.sparta.alex.exceptions.ChildNotFoundException;
+
 import java.util.ArrayList;
 
 public class BinaryTree implements BinaryTreeInterface{
@@ -36,11 +38,6 @@ public class BinaryTree implements BinaryTreeInterface{
 
 
     private void addNodeToTree(Node node, int element) {
-//        if(element == node.getValue()){
-//            //haven't implemented duplicate values, wont be added to tree => size--;
-//            size--;
-//            return;
-//        }
 
         if(element < node.getValue()){
             if(node.isLeftChildEmpty()){
@@ -78,6 +75,26 @@ public class BinaryTree implements BinaryTreeInterface{
     @Override
     public boolean findElement(int value) {
         return findNode(value) != null;
+    }
+
+    @Override
+    public int getLeftChild(int element) throws ChildNotFoundException {
+        Node node = findNode(element);
+        if(node.isLeftChildEmpty()){
+            throw new ChildNotFoundException();
+        }else{
+            return node.getLeftChild().getValue();
+        }
+    }
+
+    @Override
+    public int getRightChild(int element) throws ChildNotFoundException {
+        Node node = findNode(element);
+        if(node.isRightChildEmpty()){
+            throw new ChildNotFoundException();
+        }else{
+            return node.getRightChild().getValue();
+        }
     }
 
     @Override
