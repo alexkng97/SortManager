@@ -40,12 +40,12 @@ public class QuickSort implements Sorter{
 
         if(left == right){
             //only occurs if array size of 2: pivot is assigned to array[1] and left and right == 0.
-            //runs check as (left < right) is never checked, if array[0] > pivot => right
-            //as both are 0, original
+            //runs check as (left < right) is never checked, partitions array correctly
 
             if(array[left] >= pivot){
                 leftPartition =Arrays.copyOfRange(array,0,left);
                 rightPartition = Arrays.copyOfRange(array,0,array.length-1);
+                
             } else{
                 leftPartition =Arrays.copyOfRange(array,0,array.length-1);
                 rightPartition =Arrays.copyOfRange(array,0,left);
