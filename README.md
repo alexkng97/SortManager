@@ -15,8 +15,8 @@ Sorting Algorithms implemented:
 
 Users can clone this repository and run the class file based on what program they want:
 
-To run the GUI, users should run GUIRunner. 
+* To run the GUI, users should run GUIRunner. 
 
-To run the command line program, users should run CommandLineRunner.
+* To run the command line program, users should run CommandLineRunner.
 
-GUI was implemented using Java 8, so users may have to revert to an older version of Java SDK in order for it to work properly.
+*GUI was implemented using the JavaFX libraries in the Java 8.0.271 SDK, so users may have to revert to an older version of Java SDK in order for it to work properly.*
