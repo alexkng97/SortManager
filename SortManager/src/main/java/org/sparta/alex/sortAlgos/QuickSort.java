@@ -45,7 +45,7 @@ public class QuickSort implements Sorter{
             if(array[left] >= pivot){
                 leftPartition =Arrays.copyOfRange(array,0,left);
                 rightPartition = Arrays.copyOfRange(array,0,array.length-1);
-                
+
             } else{
                 leftPartition =Arrays.copyOfRange(array,0,array.length-1);
                 rightPartition =Arrays.copyOfRange(array,0,left);
