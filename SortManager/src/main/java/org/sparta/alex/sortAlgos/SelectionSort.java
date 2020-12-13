@@ -5,7 +5,6 @@ public class SelectionSort implements Sorter{
 
     @Override
     public int[] sortArray(int[] arrayToSort) {
-        //loop through each index // second loop of finding minimum and swapping it with current index
         int min;
         int minIndex;
 

@@ -1,6 +1,7 @@
 package org.sparta.alex.sortAlgos;
 
 public class InsertionSort implements Sorter{
+
     @Override
     public int[] sortArray(int[] arrayToSort) {
         int temp, j;

@@ -11,7 +11,6 @@ import javafx.stage.Window;
 import org.sparta.alex.sortAlgos.*;
 import org.sparta.alex.starter.RandomArray;
 
-import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.Arrays;
@@ -32,8 +31,6 @@ public class ResultsController {
         unsortedArrayField.setEditable(false);
         sortedArrayField.setEditable(false);
         timings.setEditable(false);
-        //System.out.println("init called");
-
 
     }
 

@@ -19,7 +19,7 @@ public class CommandLineStarter {
         System.out.println("6. Selection Sort");
     }
 
-    private static int[] callAlgorithm(int algoSelection, int[] randomArray) {
+    private static void callAlgorithm(int algoSelection, int[] randomArray) {
         long startTime, endTime;
         double difference;
         int[] originalArray = randomArray;
@@ -85,7 +85,6 @@ public class CommandLineStarter {
                 printSortedAndTimings(randomArray,difference,originalArray);
                 break;
         }
-        return new int[0];
 
     }
 

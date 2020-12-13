@@ -7,7 +7,6 @@ public class RandomArray {
 
         for(int i = 0; i < size; i++){
             result[i] =  (int)(Math.random() * 100 + 1);
-
         }
 
         return result;

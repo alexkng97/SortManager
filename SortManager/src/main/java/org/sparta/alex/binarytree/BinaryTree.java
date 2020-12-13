@@ -124,7 +124,6 @@ public class BinaryTree implements BinaryTreeInterface{
     public void descTraverse(Node node, ArrayList<Integer> descendingOrder){
         if(node != null){
             descTraverse(node.getRightChild(),descendingOrder);
-            //System.out.println(node.getValue());
             descendingOrder.add(node.getValue());
             descTraverse(node.getLeftChild(),descendingOrder);
         }

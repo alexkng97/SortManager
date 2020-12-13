@@ -30,10 +30,7 @@ public class Controller {
 
     public void handleSortButtonClicked(ActionEvent e) throws IOException {
         size = Integer.parseInt(arraySize.getText());
-        //System.out.println("size entered:" + size);
         sortAlgo = (String) algo.getValue();
-       // System.out.println("algo: " + sortAlgo);
-
 
         Parent root = null;
         Scene scene = sortButton.getScene();
@@ -50,9 +47,6 @@ public class Controller {
         Scene resultScene = new Scene(loader.getRoot());
 
         stage.setScene(resultScene);
-
-
-
 
     }
 }

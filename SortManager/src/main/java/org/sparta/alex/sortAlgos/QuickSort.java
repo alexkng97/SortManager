@@ -9,11 +9,6 @@ public class QuickSort implements Sorter{
     public int[] sortArray(int[] arrayToSort) {
 
         return partition(arrayToSort);
-        //select pivot, place pivot at the end
-        //iterate through array swapping elements if they are larger/smaller than pivot
-        //split array and partition
-        //recursively call partition
-        //combine arrays + partition
     }
 
     public static int[] partition(int [] array){
