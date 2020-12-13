@@ -5,7 +5,7 @@ A program that generates a random array and will sort it using a specified sorti
 Users will be able to select an algorithm of their choice and enter the size of the random array they want generated.
 
 
-Sorting Algorithms implemented:
+### Sorting Algorithms implemented: ###
 1. Binary Tree Sort
 2. Bubble Sort
 3. Insertion Sort
